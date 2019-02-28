@@ -1,0 +1,268 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* 
+	Config color default
+*/
+/* 
+	Config color planet 
+*/
+/* 
+	Config color default
+*/
+/* 
+	font
+*/
+/*
+	Base des planètes dans l'espace
+*/
+/*
+	Génération d'étoiles aléatoire
+*/
+/* Breakpoint */
+/* mobile */
+/* tablette */
+/* desktop */
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+
+body {
+  color: #ffffff;
+  background: #000000;
+  background-attachment: fixed; }
+
+.solar {
+  position: relative;
+  perspective: 400px;
+  perspective-origin: center;
+  display: grid;
+  grid-template-columns: repeat(10, [col-start] 10vw);
+  grid-template-rows: repeat(10, [col-start] 10vh);
+  /*.solar-syst{
+		margin: 0 auto;
+	    width: 100vw;
+	    height: 100vh;
+	    position: absolute; 
+
+	  &:after{
+	    content:"";
+	    position:absolute;
+	    height:2px;
+	    width:2px;
+	    top:-2px;
+	    background:white;
+	    //box-shadow: stars(500, 1800); // espace avec les etoiles
+	    border-radius:100px;
+	    z-index: -1;
+	  }*/
+  /*#mercury {
+			@include makePlanet(lighten($mercury, 20%), darken($mercury, 30%), '../images/planet_mercury.jpg');
+
+			border-radius:50%;
+			position:absolute;
+			bottom:20%;
+			left: 30%;
+
+			transform: translateZ(0) translateY($translateY) rotatex($rotateX) scale(.5);
+			animation:  60s 3.9s infinite linear;
+		}
+
+		#venus {
+			@include makePlanet(lighten($venus, 20%), darken($venus, 30%), '../images/planet_venus.jpg');
+
+			position:absolute;
+			bottom:-40%;
+			left: 33%;
+			border-radius:50%;
+			animation: planet 60s 3.9s infinite linear;
+			transform: translateZ(-200px) translateY($translateY) rotatex($rotateX) scale(0.3);	
+		}*/
+  /*@keyframes fadeInFromNone {
+		    0% {
+		        opacity: 0.5;
+		    }
+
+		    50% {
+		        opacity: 1;
+		    }
+
+		    100% {
+		        opacity: 0.5
+		    }
+		}*/ }
+  .solar a.planet,
+  .solar a.moon {
+    display: block;
+    text-decoration: none; }
+    .solar a.planet#mercury,
+    .solar a.moon#mercury {
+      background: url("../images/planet_mercury.jpg");
+      transform: rotate(20deg);
+      background-size: cover;
+      border-radius: 50%;
+      transform-style: preserve-3d;
+      box-shadow: 0 -300px 200px black inset, 0 0px 130px 40px #ad3b1e inset, 0 0px 23px 4px #ad3b1e inset, 0 -10px 230px #f0b6a7;
+      height: 512px;
+      width: 512px;
+      animation: planet 150s 3.9s infinite linear;
+      grid-column: col-start 5;
+      grid-row: 2; }
+    .solar a.planet#venus,
+    .solar a.moon#venus {
+      background: url("../images/planet_venus.jpg");
+      transform: rotate(20deg);
+      background-size: cover;
+      border-radius: 50%;
+      transform-style: preserve-3d;
+      box-shadow: 0 -200px 150px black inset, 0 0px 100px 30px #2b1605 inset, 0 0px 18px 2px #2b1605 inset, 0 -8px 200px #e99046;
+      height: calc(512px * .8);
+      width: calc(512px * .8);
+      animation: planet 120s 3.9s infinite linear;
+      grid-column: col-start 8;
+      grid-row: 5; }
+    .solar a.planet#earth,
+    .solar a.moon#earth {
+      background: url("../images/planet_earth.jpg");
+      transform: rotate(20deg);
+      background-size: cover;
+      border-radius: 50%;
+      transform-style: preserve-3d;
+      box-shadow: 0 -100px 50px black inset, 0 0px 65px 20px #168466 inset, 0 0px 11px 2px #168466 inset, 0 -5px 30px #d4f8ee;
+      height: calc(512px * .5);
+      width: calc(512px * .5);
+      animation: planet 90s 3.9s infinite linear;
+      grid-column: col-start 2;
+      grid-row: 7; }
+    .solar a.planet#moon,
+    .solar a.moon#moon {
+      background: url("../images/moon_earth.jpg");
+      transform: rotate(20deg);
+      background-size: cover;
+      border-radius: 50%;
+      transform-style: preserve-3d;
+      box-shadow: 0 -40px 40px black inset, 0 0px 33px 10px #a8a8a8 inset, 0 0px 6px 1px #a8a8a8 inset, 0 -3px 66px white;
+      height: calc(512px * .2);
+      width: calc(512px * .2);
+      border-radius: 50%;
+      animation: planet 120s 3.9s infinite linear;
+      grid-column: col-start 2;
+      grid-row: 6; }
+  .solar .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000000;
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: repeat(10, [col-start] 10vw);
+    grid-template-rows: repeat(10, [col-start] 10vh);
+    min-height: 100vh;
+    min-width: 100vw; }
+    .solar .modal .content-right-modal {
+      background-color: #ffffff;
+      overflow: scroll;
+      padding: 49px 60px 30px 60px;
+      grid-column: col-start 9 / end;
+      grid-row: 1 / 10;
+      height: 100vh; }
+      .solar .modal .content-right-modal h1 {
+        letter-spacing: 3px;
+        top: 0;
+        padding: 5px 0 5px 0;
+        width: 100%;
+        font-size: 20px;
+        color: #E8927C;
+        font-family: 'Montserrat', sans-serif;
+        transition: all 1s 3s;
+        position: sticky;
+        background-color: #ffffff;
+        z-index: 1;
+        top: -49px; }
+        .solar .modal .content-right-modal h1:after {
+          width: 30px;
+          height: 2px;
+          background: black;
+          display: block;
+          content: '';
+          margin-bottom: 30px;
+          margin-top: 8px; }
+      .solar .modal .content-right-modal p {
+        color: #000000;
+        text-transform: uppercase; }
+      .solar .modal .content-right-modal .close {
+        letter-spacing: 3px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        position: absolute;
+        top: 5px;
+        right: 30px;
+        text-decoration: none;
+        color: red; }
+    .solar .modal .content-left-modal {
+      background: url("../images/bg-mountains.png") no-repeat;
+      background-color: #561e0f;
+      grid-column: col-start 1 / 9;
+      grid-row: 1;
+      height: 100vh; }
+    .solar .modal:target {
+      opacity: 1;
+      pointer-events: auto; }
+
+@keyframes planet {
+  from {
+    background-position-x: 0px; }
+  to {
+    background-position-x: -1024px; } }

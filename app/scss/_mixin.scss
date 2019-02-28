@@ -1,0 +1,18 @@
+/*
+	Base des planètes dans l'espace
+*/
+
+@mixin makePlanet($textureBG) {
+    background: url($textureBG);	
+	transform: rotate(20deg);
+    background-size: cover;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+}
+
+
+@mixin descriptionPlanetText($size, $lineHeight, $weight) {
+	font-size: $size;
+	line-height: $lineHeight;
+	font-weight: $weight;
+}
