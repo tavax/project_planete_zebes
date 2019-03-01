@@ -1,0 +1,26 @@
+/* 
+	Config of all animations and keyframes
+*/
+
+@keyframes planet {
+	from {
+		background-position-x: 0px; 
+	}
+	to {
+		background-position-x: -1024px;
+	} 
+}
+
+/*@keyframes fadeInFromNone {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5
+    }
+}*/

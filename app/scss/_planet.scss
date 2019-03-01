@@ -1,0 +1,83 @@
+/* 
+	Config planet/moon and all elements in the space area
+*/
+
+.solar {
+    position: relative;
+	perspective: 400px;
+	perspective-origin: center; 
+	display: grid;
+	grid-template-columns: repeat(10, [col-start] 10vw);
+	grid-template-rows: repeat(10, [col-start] 10vh);
+
+	a.planet,
+	a.moon {
+		display: block;
+		text-decoration:none;
+
+		&#zebes {
+
+			@include makePlanet('../images/planet_zebes.jpg');
+
+			box-shadow: 0 (-300px) 200px black inset, 
+			    0 0px 130px 40px darken($zebes, 30%) inset, 
+			    0 0px 23px 4px darken($zebes, 30%) inset, 
+			    0 -10px 230px lighten($zebes, 10%);
+
+			height: 512px;
+			width: 512px;
+			animation: planet 150s 3.9s infinite linear; 
+			grid-column: col-start 5; 
+  			grid-row: 2;
+		}
+		
+		&#venus {
+
+			@include makePlanet('../images/planet_venus.jpg');
+			
+			box-shadow: 0 (-200px) 150px black inset, 
+			    0 0px 100px 30px darken($venus, 30%) inset, 
+			    0 0px 18px 2px darken($venus, 30%) inset, 
+			    0 -8px 200px lighten($venus, 20%);
+
+			height: calc(512px * .8);
+			width: calc(512px * .8);
+			animation: planet 120s 3.9s infinite linear;
+			grid-column: col-start 8; 
+  			grid-row: 5;
+		}
+
+		&#earth {
+
+			@include makePlanet('../images/planet_earth.jpg');
+
+			box-shadow: 0 (-100px) 50px black inset, 
+			    0 0px 65px 20px darken($earth, 20%) inset, 
+			    0 0px 11px 2px darken($earth, 20%) inset, 
+			    0 -5px 30px lighten($earth, 40%);
+
+			height: calc(512px * .5);
+			width: calc(512px * .5);
+			animation: planet 90s 3.9s infinite linear;
+			grid-column: col-start 2; 
+  			grid-row: 7;
+		}
+
+	  	&#moon {
+
+	  		@include makePlanet('../images/moon_earth.jpg');
+
+	  		box-shadow: 0 (-40px) 40px black inset, 
+			    0 0px 33px 10px darken($moon-earth, 30%) inset, 
+			    0 0px 6px 1px darken($moon-earth, 30%) inset, 
+			    0 -3px 66px lighten($moon-earth, 20%);
+
+			height: calc(512px * .2);
+			width: calc(512px * .2);
+			border-radius: 50%;
+			animation: planet 120s 3.9s infinite linear;
+			grid-column: col-start 2; 
+  			grid-row: 6;
+		}
+	}
+}

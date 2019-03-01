@@ -108,7 +108,7 @@ body {
       display: block; }
   body label {
     cursor: pointer; }
-    body label.mercury > .preview {
+    body label.zebes > .preview {
       background: url("https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg") !important; }
     body label.venus > .preview {
       background: url("https://nasa3d.arc.nasa.gov/shared_assets/images/ven0aaa2/ven0aaa2-copy-428-321.jpg") !important; }
@@ -146,7 +146,7 @@ body {
       left: -4px; }
     body label.menu:hover h2, body label.menu:hover h3 {
       opacity: 1; }
-    body label.menu.mercury h2 .pip {
+    body label.menu.zebes h2 .pip {
       background: #E8927C; }
     body label.menu.venus h2 .pip {
       background: #b45d15; }
@@ -330,7 +330,7 @@ body {
     body input[type="radio"][name="planet"].planet1:checked + label + div .solar_systm:nth-of-type(9) .planet {
       transform: translateZ(-18400px) translateY(0) rotatex(4deg) scaleX(0.89);
       opacity: -6; }
-    body input[type="radio"][name="planet"].planet1:checked + label.mercury > .info h3 {
+    body input[type="radio"][name="planet"].planet1:checked + label.zebes > .info h3 {
       color: #E8927C; }
     body input[type="radio"][name="planet"].planet1:checked + label.venus > .info h3 {
       color: #b45d15; }
@@ -426,7 +426,7 @@ body {
     body input[type="radio"][name="planet"].planet2:checked + label + input + label + div .solar_systm:nth-of-type(9) .planet {
       transform: translateZ(-16100px) translateY(0) rotatex(4deg) scaleX(0.89);
       opacity: -5; }
-    body input[type="radio"][name="planet"].planet2:checked + label.mercury > .info h3 {
+    body input[type="radio"][name="planet"].planet2:checked + label.zebes > .info h3 {
       color: #E8927C; }
     body input[type="radio"][name="planet"].planet2:checked + label.venus > .info h3 {
       color: #b45d15; }
@@ -524,7 +524,7 @@ body {
     body input[type="radio"][name="planet"].planet3:checked + label + input + label + input + label + div .solar_systm:nth-of-type(9) .planet {
       transform: translateZ(-13800px) translateY(0) rotatex(4deg) scaleX(0.89);
       opacity: -4; }
-    body input[type="radio"][name="planet"].planet3:checked + label.mercury > .info h3 {
+    body input[type="radio"][name="planet"].planet3:checked + label.zebes > .info h3 {
       color: #E8927C; }
     body input[type="radio"][name="planet"].planet3:checked + label.venus > .info h3 {
       color: #b45d15; }
@@ -624,7 +624,7 @@ body {
     body input[type="radio"][name="planet"].planet4:checked + label + input + label + input + label + input + label + div .solar_systm:nth-of-type(9) .planet {
       transform: translateZ(-11500px) translateY(0) rotatex(4deg) scaleX(0.89);
       opacity: -3; }
-    body input[type="radio"][name="planet"].planet4:checked + label.mercury > .info h3 {
+    body input[type="radio"][name="planet"].planet4:checked + label.zebes > .info h3 {
       color: #E8927C; }
     body input[type="radio"][name="planet"].planet4:checked + label.venus > .info h3 {
       color: #b45d15; }
@@ -726,7 +726,7 @@ body {
     body input[type="radio"][name="planet"].planet5:checked + label + input + label + input + label + input + label + input + label + div .solar_systm:nth-of-type(9) .planet {
       transform: translateZ(-9200px) translateY(0) rotatex(4deg) scaleX(0.89);
       opacity: -2; }
-    body input[type="radio"][name="planet"].planet5:checked + label.mercury > .info h3 {
+    body input[type="radio"][name="planet"].planet5:checked + label.zebes > .info h3 {
       color: #E8927C; }
     body input[type="radio"][name="planet"].planet5:checked + label.venus > .info h3 {
       color: #b45d15; }
@@ -830,7 +830,7 @@ body {
     body input[type="radio"][name="planet"].planet6:checked + label + input + label + input + label + input + label + input + label + input + label + div .solar_systm:nth-of-type(9) .planet {
       transform: translateZ(-6900px) translateY(0) rotatex(4deg) scaleX(0.89);
       opacity: -1; }
-    body input[type="radio"][name="planet"].planet6:checked + label.mercury > .info h3 {
+    body input[type="radio"][name="planet"].planet6:checked + label.zebes > .info h3 {
       color: #E8927C; }
     body input[type="radio"][name="planet"].planet6:checked + label.venus > .info h3 {
       color: #b45d15; }
@@ -936,7 +936,7 @@ body {
     body input[type="radio"][name="planet"].planet7:checked + label + input + label + input + label + input + label + input + label + input + label + input + label + div .solar_systm:nth-of-type(9) .planet {
       transform: translateZ(-4600px) translateY(0) rotatex(4deg) scaleX(0.89);
       opacity: 0; }
-    body input[type="radio"][name="planet"].planet7:checked + label.mercury > .info h3 {
+    body input[type="radio"][name="planet"].planet7:checked + label.zebes > .info h3 {
       color: #E8927C; }
     body input[type="radio"][name="planet"].planet7:checked + label.venus > .info h3 {
       color: #b45d15; }
@@ -1044,7 +1044,7 @@ body {
     body input[type="radio"][name="planet"].planet8:checked + label + input + label + input + label + input + label + input + label + input + label + input + label + input + label + div .solar_systm:nth-of-type(9) .planet {
       transform: translateZ(-2300px) translateY(0) rotatex(4deg) scaleX(0.89);
       opacity: 1; }
-    body input[type="radio"][name="planet"].planet8:checked + label.mercury > .info h3 {
+    body input[type="radio"][name="planet"].planet8:checked + label.zebes > .info h3 {
       color: #E8927C; }
     body input[type="radio"][name="planet"].planet8:checked + label.venus > .info h3 {
       color: #b45d15; }
@@ -1154,7 +1154,7 @@ body {
       body input[type="radio"][name="planet"].planet9:checked + label + input + label + input + label + input + label + input + label + input + label + input + label + input + label + input + label + div .solar_systm:nth-of-type(9) .planet .overlay {
         opacity: 1;
         top: -240px; }
-    body input[type="radio"][name="planet"].planet9:checked + label.mercury > .info h3 {
+    body input[type="radio"][name="planet"].planet9:checked + label.zebes > .info h3 {
       color: #E8927C; }
     body input[type="radio"][name="planet"].planet9:checked + label.venus > .info h3 {
       color: #b45d15; }
@@ -1306,7 +1306,7 @@ body {
   body .solar_systm .planet .trajectory {
     transition: all .6s 0s;
     opacity: 0; }
-  body .solar_systm .planet.mercury {
+  body .solar_systm .planet.zebes {
     background: url("https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg");
     box-shadow: 0 -590px 150px black inset, 0 0px 130px 40px rgba(234, 205, 199, 0.6) inset, 0 0px 23px 4px rgba(234, 205, 199, 0.6) inset, 0 -10px 130px rgba(188, 143, 127, 0.6); }
   body .solar_systm .planet.venus {
@@ -1538,9 +1538,9 @@ body {
     transition: all .4s 0s;
     text-transform: uppercase;
     z-index: 1; }
-    body .solar_systm .planet_description.mercury a {
+    body .solar_systm .planet_description.zebes a {
       color: #E8927C; }
-    body .solar_systm .planet_description.mercury h2 {
+    body .solar_systm .planet_description.zebes h2 {
       color: #f7dad3; }
     body .solar_systm .planet_description.venus a {
       color: #b45d15; }

@@ -1,0 +1,130 @@
+/* 
+	Config of all modal
+*/
+
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: $primary-color;
+	z-index: 99999;
+	opacity:0;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+	display: grid;
+	grid-template-columns: repeat(10, [col-start] 10vw);
+	grid-template-rows: repeat(10, [col-start] 10vh);
+	min-height: 100vh;
+	min-width: 100vw;
+	
+	.content-left-modal {
+		background: url('https://external-preview.redd.it/J3VTv5X57e9Eo6YYnwHeuZQDyiAY6W99INrMKOQoZ7I.jpg?auto=webp&s=f47b3e6413d5870036b8d2895f111272b46463e8');
+		background-size: cover;
+		//background-color: darken($zebes,50%);
+		grid-column: col-start 1 / 9; 
+		grid-row: 1;
+		height: 100vh;
+
+		.background-rgba {
+			background-color: rgba($primary-color,.8);
+			width: 80vw;
+			height: 100vh;
+			display: grid;
+			grid-template-columns: repeat(8, [col-start] 10vw);
+			grid-template-rows: repeat(10, [col-start] 10vh);
+
+			@import "navigation.scss";
+		}
+
+		.content {
+			background-color: rgba($zebes,.8);
+			position: fixed;
+			top: 30vh;
+			left: 10vw;
+			width: 60vw;
+			height: 40vh;
+			border-radius:10px;
+			padding: 0 30px;
+			color: $primary-color;
+			position: relative;
+			overflow-y: scroll;
+			text-align: center;
+
+			p {
+				color: $primary-color;
+				text-transform: uppercase;
+				padding: 20px;
+			}
+
+			&:nth-of-type(2) {
+
+				background-color: rgba($zebes,.4);
+				top: 80vh;
+				height: 10vh;
+				left: 15vw;
+				width: 50vw;
+				position: fixed;
+			}
+		}
+	}
+	
+	.content-right-modal {
+		background-color: $secondary-color;
+		padding: 49px 60px 30px 60px;
+		grid-column: col-start 9 / end; 
+		grid-row: 1;
+		height: 100vh;
+
+		h1 {
+			letter-spacing: 3px;
+		    top: 0;
+		    padding: 5px 0 5px 0;
+		    width: 100%;
+		    font-size: 30px;
+		    font-weight: bold;
+		    color: $zebes;
+		    text-transform: uppercase;
+		    font-family: 'Montserrat', sans-serif;
+		    transition: all 1s 3s;
+		    position: sticky;
+		    background-color: $secondary-color;
+		    z-index: 1;
+		    top: -49px;
+
+		    &:after {
+		    	width: 30px;
+			    height: 2px;
+			    background: complement($zebes);
+			    display: block;
+			    content: '';
+			    margin-bottom: 30px;
+			    margin-top: 8px;
+		    }
+		}
+
+		p {
+			color: $primary-color;
+			text-transform: uppercase;
+			padding-bottom: 10px;
+		}
+
+		.close {
+			letter-spacing: 3px;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 20px;
+			position: absolute;
+			top:5px;
+			right: 30px;
+			text-decoration: none;
+			color: red;
+		}
+	}
+	
+
+	&:target {
+		opacity:1;
+		pointer-events: auto;
+	}
+}

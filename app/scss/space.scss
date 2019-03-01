@@ -10,7 +10,7 @@ $traverse: "";
 $traverseTriggers: "";
 
 // Colors
-$mercury:#E8927C;
+$zebes:#E8927C;
 $venus: #b45d15;
 $earth: #26daaa;
 $mars: #e55f45;
@@ -196,7 +196,7 @@ body {
     label {
         cursor: pointer;
 
-        &.mercury {
+        &.zebes {
             & > .preview {
                 background: url('https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg') !important;
             }
@@ -273,9 +273,9 @@ body {
             }
         }
 
-        &.mercury {
+        &.zebes {
             h2 .pip {
-                background: $mercury;
+                background: $zebes;
             }
         }
 
@@ -617,9 +617,9 @@ body {
 
                 }
 
-                & + label.mercury {
+                & + label.zebes {
                     & > .info h3 {
-                        color:$mercury;
+                        color:$zebes;
                     }
                 }
 
@@ -752,7 +752,7 @@ body {
                     opacity: 0;
                 }
 
-                &.mercury {
+                &.zebes {
                     @include makePlanet(rgba(188, 143, 127, 0.6), rgba(234, 205, 199, 0.6), 'https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg');
                 }
 
@@ -959,13 +959,13 @@ body {
                     text-transform: uppercase;
                     z-index: 1;
 
-                    &.mercury {
+                    &.zebes {
                         a {
-                            color: $mercury;
+                            color: $zebes;
                         }
 
                         h2 {
-                            color: lighten($mercury, 20);  
+                            color: lighten($zebes, 20);  
                         }
                     }
 

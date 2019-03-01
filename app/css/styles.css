@@ -65,86 +65,178 @@ table {
 /*
 	Génération d'étoiles aléatoire
 */
+/* 
+	Config of all modal
+*/
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000000;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: repeat(10, [col-start] 10vw);
+  grid-template-rows: repeat(10, [col-start] 10vh);
+  min-height: 100vh;
+  min-width: 100vw; }
+  .modal .content-left-modal {
+    background: url("https://external-preview.redd.it/J3VTv5X57e9Eo6YYnwHeuZQDyiAY6W99INrMKOQoZ7I.jpg?auto=webp&s=f47b3e6413d5870036b8d2895f111272b46463e8");
+    background-size: cover;
+    grid-column: col-start 1 / 9;
+    grid-row: 1;
+    height: 100vh; }
+    .modal .content-left-modal .background-rgba {
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 80vw;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(8, [col-start] 10vw);
+      grid-template-rows: repeat(10, [col-start] 10vh);
+      /*
+	config of all manu navigation
+*/ }
+      .modal .content-left-modal .background-rgba nav {
+        grid-column-start: 2;
+        grid-column-end: 8;
+        grid-row-start: 2; }
+        .modal .content-left-modal .background-rgba nav .nav.zebes {
+          text-align: center; }
+          .modal .content-left-modal .background-rgba nav .nav.zebes li {
+            display: inline-block; }
+            .modal .content-left-modal .background-rgba nav .nav.zebes li a {
+              text-transform: uppercase;
+              color: rgba(255, 255, 255, 0.3);
+              font-size: 18px;
+              text-decoration: none;
+              display: block;
+              line-height: 7vh;
+              padding: 0 2vw;
+              margin: 0 1vw;
+              box-shadow: 0 0 0 0.5vh rgba(255, 255, 255, 0.3);
+              border-radius: 10px;
+              transition: all .5s; }
+              .modal .content-left-modal .background-rgba nav .nav.zebes li a:hover {
+                background: #E8927C;
+                box-shadow: 0 0 0 .5vh transparent;
+                color: #176d83; }
+    .modal .content-left-modal .content {
+      background-color: rgba(232, 146, 124, 0.8);
+      position: fixed;
+      top: 30vh;
+      left: 10vw;
+      width: 60vw;
+      height: 40vh;
+      border-radius: 10px;
+      padding: 0 30px;
+      color: #000000;
+      position: relative;
+      overflow-y: scroll;
+      text-align: center; }
+      .modal .content-left-modal .content p {
+        color: #000000;
+        text-transform: uppercase;
+        padding: 20px; }
+      .modal .content-left-modal .content:nth-of-type(2) {
+        background-color: rgba(232, 146, 124, 0.4);
+        top: 80vh;
+        height: 10vh;
+        left: 15vw;
+        width: 50vw;
+        position: fixed; }
+  .modal .content-right-modal {
+    background-color: #ffffff;
+    padding: 49px 60px 30px 60px;
+    grid-column: col-start 9 / end;
+    grid-row: 1;
+    height: 100vh; }
+    .modal .content-right-modal h1 {
+      letter-spacing: 3px;
+      top: 0;
+      padding: 5px 0 5px 0;
+      width: 100%;
+      font-size: 30px;
+      font-weight: bold;
+      color: #E8927C;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 1s 3s;
+      position: sticky;
+      background-color: #ffffff;
+      z-index: 1;
+      top: -49px; }
+      .modal .content-right-modal h1:after {
+        width: 30px;
+        height: 2px;
+        background: #7cd2e8;
+        display: block;
+        content: '';
+        margin-bottom: 30px;
+        margin-top: 8px; }
+    .modal .content-right-modal p {
+      color: #000000;
+      text-transform: uppercase;
+      padding-bottom: 10px; }
+    .modal .content-right-modal .close {
+      letter-spacing: 3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      position: absolute;
+      top: 5px;
+      right: 30px;
+      text-decoration: none;
+      color: red; }
+  .modal:target {
+    opacity: 1;
+    pointer-events: auto; }
+
+/* 
+	Config of all animations and keyframes
+*/
+@keyframes planet {
+  from {
+    background-position-x: 0px; }
+  to {
+    background-position-x: -1024px; } }
+
+/*@keyframes fadeInFromNone {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5
+    }
+}*/
 /* Breakpoint */
 /* mobile */
 /* tablette */
 /* desktop */
-html, body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden; }
-
-body {
-  color: #ffffff;
-  background: #000000;
-  background-attachment: fixed; }
-
+/* 
+	Config planet/moon and all elements in the space area
+*/
 .solar {
   position: relative;
   perspective: 400px;
   perspective-origin: center;
   display: grid;
   grid-template-columns: repeat(10, [col-start] 10vw);
-  grid-template-rows: repeat(10, [col-start] 10vh);
-  /*.solar-syst{
-		margin: 0 auto;
-	    width: 100vw;
-	    height: 100vh;
-	    position: absolute; 
-
-	  &:after{
-	    content:"";
-	    position:absolute;
-	    height:2px;
-	    width:2px;
-	    top:-2px;
-	    background:white;
-	    //box-shadow: stars(500, 1800); // espace avec les etoiles
-	    border-radius:100px;
-	    z-index: -1;
-	  }*/
-  /*#mercury {
-			@include makePlanet(lighten($mercury, 20%), darken($mercury, 30%), '../images/planet_mercury.jpg');
-
-			border-radius:50%;
-			position:absolute;
-			bottom:20%;
-			left: 30%;
-
-			transform: translateZ(0) translateY($translateY) rotatex($rotateX) scale(.5);
-			animation:  60s 3.9s infinite linear;
-		}
-
-		#venus {
-			@include makePlanet(lighten($venus, 20%), darken($venus, 30%), '../images/planet_venus.jpg');
-
-			position:absolute;
-			bottom:-40%;
-			left: 33%;
-			border-radius:50%;
-			animation: planet 60s 3.9s infinite linear;
-			transform: translateZ(-200px) translateY($translateY) rotatex($rotateX) scale(0.3);	
-		}*/
-  /*@keyframes fadeInFromNone {
-		    0% {
-		        opacity: 0.5;
-		    }
-
-		    50% {
-		        opacity: 1;
-		    }
-
-		    100% {
-		        opacity: 0.5
-		    }
-		}*/ }
+  grid-template-rows: repeat(10, [col-start] 10vh); }
   .solar a.planet,
   .solar a.moon {
     display: block;
     text-decoration: none; }
-    .solar a.planet#mercury,
-    .solar a.moon#mercury {
-      background: url("../images/planet_mercury.jpg");
+    .solar a.planet#zebes,
+    .solar a.moon#zebes {
+      background: url("../images/planet_zebes.jpg");
       transform: rotate(20deg);
       background-size: cover;
       border-radius: 50%;
@@ -195,74 +287,13 @@ body {
       animation: planet 120s 3.9s infinite linear;
       grid-column: col-start 2;
       grid-row: 6; }
-  .solar .modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: #000000;
-    z-index: 99999;
-    opacity: 0;
-    transition: opacity 400ms ease-in;
-    pointer-events: none;
-    display: grid;
-    grid-template-columns: repeat(10, [col-start] 10vw);
-    grid-template-rows: repeat(10, [col-start] 10vh);
-    min-height: 100vh;
-    min-width: 100vw; }
-    .solar .modal .content-right-modal {
-      background-color: #ffffff;
-      overflow: scroll;
-      padding: 49px 60px 30px 60px;
-      grid-column: col-start 9 / end;
-      grid-row: 1 / 10;
-      height: 100vh; }
-      .solar .modal .content-right-modal h1 {
-        letter-spacing: 3px;
-        top: 0;
-        padding: 5px 0 5px 0;
-        width: 100%;
-        font-size: 20px;
-        color: #E8927C;
-        font-family: 'Montserrat', sans-serif;
-        transition: all 1s 3s;
-        position: sticky;
-        background-color: #ffffff;
-        z-index: 1;
-        top: -49px; }
-        .solar .modal .content-right-modal h1:after {
-          width: 30px;
-          height: 2px;
-          background: black;
-          display: block;
-          content: '';
-          margin-bottom: 30px;
-          margin-top: 8px; }
-      .solar .modal .content-right-modal p {
-        color: #000000;
-        text-transform: uppercase; }
-      .solar .modal .content-right-modal .close {
-        letter-spacing: 3px;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 20px;
-        position: absolute;
-        top: 5px;
-        right: 30px;
-        text-decoration: none;
-        color: red; }
-    .solar .modal .content-left-modal {
-      background: url("../images/bg-mountains.png") no-repeat;
-      background-color: #561e0f;
-      grid-column: col-start 1 / 9;
-      grid-row: 1;
-      height: 100vh; }
-    .solar .modal:target {
-      opacity: 1;
-      pointer-events: auto; }
 
-@keyframes planet {
-  from {
-    background-position-x: 0px; }
-  to {
-    background-position-x: -1024px; } }
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+
+body {
+  color: #ffffff;
+  background: #000000;
+  background-attachment: fixed; }
