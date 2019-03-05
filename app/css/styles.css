@@ -85,18 +85,26 @@ table {
   min-height: 100vh;
   min-width: 100vw; }
   .modal .content-left-modal {
-    background: url("https://external-preview.redd.it/J3VTv5X57e9Eo6YYnwHeuZQDyiAY6W99INrMKOQoZ7I.jpg?auto=webp&s=f47b3e6413d5870036b8d2895f111272b46463e8");
-    background-size: cover;
     grid-column: col-start 1 / 9;
     grid-row: 1;
     height: 100vh; }
+    .modal .content-left-modal .blurBG {
+      background: url("https://external-preview.redd.it/J3VTv5X57e9Eo6YYnwHeuZQDyiAY6W99INrMKOQoZ7I.jpg?auto=webp&s=f47b3e6413d5870036b8d2895f111272b46463e8");
+      background-size: cover;
+      position: absolute;
+      filter: blur(4px);
+      height: 100vh;
+      width: 80vw;
+      z-index: 1; }
     .modal .content-left-modal .background-rgba {
-      background-color: rgba(0, 0, 0, 0.8);
       width: 80vw;
       height: 100vh;
       display: grid;
       grid-template-columns: repeat(8, [col-start] 10vw);
       grid-template-rows: repeat(10, [col-start] 10vh);
+      position: relative;
+      z-index: 2;
+      overflow-x: scroll;
       /*
 	config of all manu navigation
 */ }
@@ -114,40 +122,48 @@ table {
               font-size: 18px;
               text-decoration: none;
               display: block;
-              line-height: 7vh;
+              line-height: 5vh;
               padding: 0 2vw;
               margin: 0 1vw;
-              box-shadow: 0 0 0 0.5vh rgba(255, 255, 255, 0.3);
+              box-shadow: 0 0 0 0.3vh rgba(255, 255, 255, 0.3);
               border-radius: 10px;
               transition: all .5s; }
               .modal .content-left-modal .background-rgba nav .nav.zebes li a:hover {
                 background: #E8927C;
                 box-shadow: 0 0 0 .5vh transparent;
                 color: #176d83; }
-    .modal .content-left-modal .content {
-      background-color: rgba(232, 146, 124, 0.8);
-      position: fixed;
-      top: 30vh;
-      left: 10vw;
-      width: 60vw;
-      height: 40vh;
-      border-radius: 10px;
-      padding: 0 30px;
-      color: #000000;
-      position: relative;
-      overflow-y: scroll;
-      text-align: center; }
-      .modal .content-left-modal .content p {
-        color: #000000;
-        text-transform: uppercase;
-        padding: 20px; }
-      .modal .content-left-modal .content:nth-of-type(2) {
-        background-color: rgba(232, 146, 124, 0.4);
-        top: 80vh;
-        height: 10vh;
-        left: 15vw;
-        width: 50vw;
-        position: fixed; }
+      .modal .content-left-modal .background-rgba .content {
+        background: url("https://external-preview.redd.it/J3VTv5X57e9Eo6YYnwHeuZQDyiAY6W99INrMKOQoZ7I.jpg?auto=webp&s=f47b3e6413d5870036b8d2895f111272b46463e8");
+        background-size: cover;
+        grid-column-start: 2;
+        grid-column-end: 8;
+        grid-row-start: 3;
+        grid-row-end: 10;
+        border-radius: 10px;
+        padding: 30px;
+        position: relative;
+        text-align: center;
+        box-shadow: 0 0 10px black;
+        overflow: hidden; }
+        .modal .content-left-modal .background-rgba .content p {
+          color: #ffffff;
+          padding: 10px;
+          text-shadow: 0 -1px 5px #000000; }
+        .modal .content-left-modal .background-rgba .content h1 {
+          color: #E8927C;
+          letter-spacing: 3px;
+          top: 0;
+          padding: 5px 0 5px 0;
+          width: 100%;
+          font-size: 30px;
+          font-weight: bold;
+          color: #E8927C;
+          text-transform: uppercase;
+          font-family: 'Montserrat', sans-serif; }
+        .modal .content-left-modal .background-rgba .content:nth-of-type(2) {
+          grid-column-start: 8;
+          grid-row-start: 9;
+          grid-row-end: 4; }
   .modal .content-right-modal {
     background-color: #ffffff;
     padding: 49px 60px 30px 60px;
