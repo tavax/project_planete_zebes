@@ -3,27 +3,17 @@
 */
 
 .modal {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
 	background: $primary-color;
-	z-index: 99999;
-	opacity:0;
-	transition: opacity 400ms ease-in;
-	pointer-events: none;
 	display: grid;
 	grid-template-columns: repeat(10, [col-start] 10vw);
 	grid-template-rows: repeat(10, [col-start] 10vh);
 	min-height: 100vh;
 	min-width: 100vw;
 	
-	.content-left-modal {
+	.content-left-infos-planet {
 		//background-color: darken($zebes,50%);
 		grid-column: col-start 1 / 9; 
-		grid-row: 1;
-		height: 100vh;
+		grid-row: 1 / end;
 
 		.blurBG {
 			background: url('https://external-preview.redd.it/J3VTv5X57e9Eo6YYnwHeuZQDyiAY6W99INrMKOQoZ7I.jpg?auto=webp&s=f47b3e6413d5870036b8d2895f111272b46463e8');
@@ -37,14 +27,12 @@
 
 		.background-rgba {
 			width: 80vw;
-			height: 100vh;
+			grid-row: 1 / end;
 			display: grid;
 			grid-template-columns: repeat(8, [col-start] 10vw);
 			grid-template-rows: repeat(10, [col-start] 10vh);
 			position: relative;
-			z-index: 2;
-			overflow-x: scroll;
-			
+			z-index: 2;			
 
 			@import "navigation.scss";
 		
@@ -52,23 +40,21 @@
 			.content {
 				background: url('https://external-preview.redd.it/J3VTv5X57e9Eo6YYnwHeuZQDyiAY6W99INrMKOQoZ7I.jpg?auto=webp&s=f47b3e6413d5870036b8d2895f111272b46463e8');
 				background-size: cover;
-				grid-column-start: 2;
-				grid-column-end: 8;
-				grid-row-start: 3;
-				grid-row-end: 10;
+				grid-column: 2 / 8;
+				grid-row: 3 / 10;
 				border-radius:10px;
 				padding: 30px;
 				position: relative;
-				text-align: center;
 				box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-				overflow: hidden;
+				font-family: 'Montserrat', sans-serif;
+				overflow-y: scroll;
 
-				p {
-					color: $secondary-color;
-					padding: 10px;
-					text-shadow: 0 -1px 5px $primary-color;
-					//box-shadow: inset 0 1px 0 lighten($zebes, 20%);
-				}
+				/*&:nth-of-type(2) {
+					grid-column-start: 8;
+					grid-row-start: 9;
+					grid-row-end: 4;
+				}*/
+					
 
 				h1 {
 					color: $zebes;
@@ -80,57 +66,116 @@
 				    font-weight: bold;
 				    color: $zebes;
 				    text-transform: uppercase;
-				    font-family: 'Montserrat', sans-serif;
+				}
+				p {
+					color: $secondary-color;
+					padding: 10px;
+					text-shadow: 0 -1px 5px $primary-color;
+					//box-shadow: inset 0 1px 0 lighten($zebes, 20%);
+
+					&:last-child {
+						margin-block-end: 2rem;
+					}
+				}
+				strong {
+					font-weight: bolder;
 				}
 
-				&:nth-of-type(2) {
-					grid-column-start: 8;
-					grid-row-start: 9;
-					grid-row-end: 4;
-				}
+				
 			
 			}
 		}
 	}
 	
-	.content-right-modal {
+	.content-right-infos-planet {
 		background-color: $secondary-color;
-		padding: 49px 60px 30px 60px;
+		padding: 10px 40px 10px 40px;
 		grid-column: col-start 9 / end; 
-		grid-row: 1;
-		height: 100vh;
+		grid-row: 1 / end;
+		font-family: 'Montserrat', sans-serif;
+		overflow-y: scroll;
+		overflow-padding-behavior-bottom: strict;
 
 		h1 {
 			letter-spacing: 3px;
 		    top: 0;
 		    padding: 5px 0 5px 0;
 		    width: 100%;
-		    font-size: 30px;
+		    font-size: 25px;
+		    line-height: 26px;
 		    font-weight: bold;
 		    color: $zebes;
 		    text-transform: uppercase;
-		    font-family: 'Montserrat', sans-serif;
-		    transition: all 1s 3s;
 		    position: sticky;
-		    background-color: $secondary-color;
-		    z-index: 1;
-		    top: -49px;
+		    top: -10px;
+		    background: white;
+		    text-align: justify;
+			hyphens: auto;
 
 		    &:after {
-		    	width: 30px;
+		    	width: 15px;
 			    height: 2px;
 			    background: complement($zebes);
 			    display: block;
 			    content: '';
-			    margin-bottom: 30px;
+			    margin-bottom: 15px;
 			    margin-top: 8px;
 		    }
+		}
+		h2 {
+			font-size: 16px;
+			line-height: 18px;
+			color: darken($zebes,30%);
+			padding: 5px 0 5px 0;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: justify;
+			hyphens: auto;
+
+			a {
+				color: darken($zebes,30%);
+				background:
+						linear-gradient(
+						to bottom, darken($zebes,30%) 0%,
+						darken($zebes,30%) 100%
+						);
+					background-position: 0 100%;
+					background-repeat: repeat-x;
+					background-size: 2px 2px;
+					color: darken($zebes,30%);
+					text-decoration: none;
+					transition: background-size .2s;
+
+				&:hover {
+					background-size: 2px 50px;
+					color:white;
+					
+				}
+			}
+		}
+
+		h3 {
+			font-size: 13px;
+			line-height: 15px;
+			color: darken($zebes,60%);
+			padding: 5px 0 5px 0;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: justify;
+			hyphens: auto;
 		}
 
 		p {
 			color: $primary-color;
-			text-transform: uppercase;
-			padding-bottom: 10px;
+			padding-bottom: 5px;
+			font-size: 12px;
+			line-height: 14px;
+			text-align: justify;
+			hyphens: auto;
+
+			&:last-of-type {
+				margin-block-end: 2rem;
+			}
 		}
 
 		.close {
@@ -145,7 +190,8 @@
 		}
 	}
 	
-
+	@import "device.scss";
+	
 	&:target {
 		opacity:1;
 		pointer-events: auto;

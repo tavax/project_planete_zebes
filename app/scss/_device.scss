@@ -8,6 +8,34 @@ $break3: "(min-width:1001px)";
 /* mobile */
 @media #{$break1} {
 
+	.content-left-infos-planet {
+		background-color: darken($zebes,50%);
+		grid-column: col-start 1 / end; 
+		grid-row: 1 / end;
+
+		.blurBG {
+			width: 100vw;
+		}
+
+		.background-rgba {
+			width: 100vw;
+			display: grid;
+			grid-template-columns: repeat(10, [col-start] 10vw);
+
+			nav {
+				grid-column-end: 10;
+			}
+		}
+
+		.content {
+			grid-column: col-start 2 / 10!important;
+		}
+	}
+
+	.content-right-infos-planet {
+		display: none;
+	}
+
 }
 
 /* tablette */
